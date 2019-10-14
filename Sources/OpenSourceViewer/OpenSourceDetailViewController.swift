@@ -28,6 +28,7 @@ class OpenSourceDetailViewController: UIViewController {
         
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.alwaysBounceVertical = true
         view.addSubview(scrollView)
         
         scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
