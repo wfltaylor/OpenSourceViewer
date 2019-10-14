@@ -23,7 +23,7 @@ public class OpenSourceViewController: UITableViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        navigationItem.title = "Open Source Licenses"
+        navigationItem.title = "Open Source"
     }
     
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
