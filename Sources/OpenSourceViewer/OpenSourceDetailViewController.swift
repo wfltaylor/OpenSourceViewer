@@ -35,18 +35,29 @@ class OpenSourceDetailViewController: UIViewController {
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
+        let contentView = UIView()
+        contentView.backgroundColor = .clear
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(contentView)
+        
+        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor).isActive = true
+        contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        
         let contentLabel = UILabel()
         contentLabel.text = package.license
         contentLabel.numberOfLines = 0
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(contentLabel)
+        contentLabel.setContentHuggingPriority(.required, for: .vertical)
+        contentLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        contentView.addSubview(contentLabel)
         
-        contentLabel.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        contentLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor).isActive = true
-        contentLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        contentLabel.rightAnchor.constraint(equalTo: scrollView.rightAnchor).isActive = true
-        contentLabel.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor).isActive = true
-        contentLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        contentLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16).isActive = true
+        contentLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
+        contentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
+        contentLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
     }
     
 }
