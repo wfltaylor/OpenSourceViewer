@@ -1,3 +1,3 @@
 # OpenSourceViewer
 
-A description of this package.
+Easily view open source dependencies.
