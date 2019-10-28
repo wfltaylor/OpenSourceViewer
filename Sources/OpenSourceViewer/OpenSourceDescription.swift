@@ -11,7 +11,7 @@ public struct OpenSourceDescription: Codable {
     
     let packages: [OpenSourcePackage]
     
-    public init(from url: URL) throws {
+    public init(fromUrl url: URL) throws {
         let jsonData = try Data(contentsOf: url)
         let description = try JSONDecoder().decode(Self.self, from: jsonData)
         self = description
