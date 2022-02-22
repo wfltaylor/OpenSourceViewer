@@ -7,10 +7,13 @@
 
 import UIKit
 
-
 class OpenSourceDetailViewController: UIViewController {
     
+    // MARK: Properties
+    
     let package: OpenSourcePackage
+    
+    // MARK: Init
     
     init(package: OpenSourcePackage) {
         self.package = package
@@ -21,10 +24,23 @@ class OpenSourceDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup() {
+        
+        // view
+        
         view.backgroundColor = .systemBackground
         navigationItem.title = package.name
+        
+        // scroll view
         
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +52,8 @@ class OpenSourceDetailViewController: UIViewController {
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
+        // content view
+        
         let contentView = UIView()
         contentView.backgroundColor = .clear
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,6 +64,8 @@ class OpenSourceDetailViewController: UIViewController {
         contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor).isActive = true
         contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        
+        // content label
         
         let contentLabel = UILabel()
         contentLabel.text = package.license
