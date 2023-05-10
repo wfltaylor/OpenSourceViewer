@@ -47,6 +47,7 @@ public class OpenSourceViewController: UITableViewController {
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         cell.textLabel?.text = openSourceDescription.packages[indexPath.item].name
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }
