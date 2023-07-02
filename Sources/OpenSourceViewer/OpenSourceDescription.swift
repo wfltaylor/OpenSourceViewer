@@ -8,7 +8,7 @@
 import Foundation
 
 /// A description of all of the open source resources utilized by a project.
-public struct OpenSourceDescription: Codable {
+public struct OpenSourceDescription: Codable, Hashable {
     
     // MARK: Properties
     

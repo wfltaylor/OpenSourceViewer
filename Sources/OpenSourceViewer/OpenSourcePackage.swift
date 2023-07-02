@@ -8,7 +8,7 @@
 import Foundation
 
 /// Represents an individual open source resource
-struct OpenSourcePackage: Codable {
+struct OpenSourcePackage: Codable, Hashable {
     
     /// The name of the open source resource.
     let name: String
